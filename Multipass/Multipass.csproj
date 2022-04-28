@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="GenerateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenerateControl.Designer.cs">
+      <DependentUpon>GenerateControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="StoreAccountControl.Designer.cs">
       <DependentUpon>StoreAccountControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GenerateControl.resx">
+      <DependentUpon>GenerateControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParentWindow.resx">
       <DependentUpon>ParentWindow.cs</DependentUpon>
     </EmbeddedResource>

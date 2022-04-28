@@ -33,8 +33,9 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnSaveAccount = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.accountsControl1 = new Multipass.AccountsControl();
+            this.generateControl1 = new Multipass.GenerateControl();
             this.storeAccountControl1 = new Multipass.StoreAccountControl();
+            this.accountsControl1 = new Multipass.AccountsControl();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.btnGenerate.TabIndex = 2;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnSaveAccount
             // 
@@ -82,12 +84,12 @@
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
-            // accountsControl1
+            // generateControl1
             // 
-            this.accountsControl1.Location = new System.Drawing.Point(180, 0);
-            this.accountsControl1.Name = "accountsControl1";
-            this.accountsControl1.Size = new System.Drawing.Size(380, 340);
-            this.accountsControl1.TabIndex = 1;
+            this.generateControl1.Location = new System.Drawing.Point(179, 0);
+            this.generateControl1.Name = "generateControl1";
+            this.generateControl1.Size = new System.Drawing.Size(380, 340);
+            this.generateControl1.TabIndex = 3;
             // 
             // storeAccountControl1
             // 
@@ -96,11 +98,19 @@
             this.storeAccountControl1.Size = new System.Drawing.Size(380, 340);
             this.storeAccountControl1.TabIndex = 2;
             // 
+            // accountsControl1
+            // 
+            this.accountsControl1.Location = new System.Drawing.Point(180, 0);
+            this.accountsControl1.Name = "accountsControl1";
+            this.accountsControl1.Size = new System.Drawing.Size(380, 340);
+            this.accountsControl1.TabIndex = 1;
+            // 
             // ParentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 343);
+            this.Controls.Add(this.generateControl1);
             this.Controls.Add(this.storeAccountControl1);
             this.Controls.Add(this.accountsControl1);
             this.Controls.Add(this.pnMenu);
@@ -121,6 +131,7 @@
         private System.Windows.Forms.Button btnGenerate;
         private AccountsControl accountsControl1;
         private StoreAccountControl storeAccountControl1;
+        private GenerateControl generateControl1;
     }
 }
 

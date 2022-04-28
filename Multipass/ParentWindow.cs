@@ -23,6 +23,7 @@ namespace Multipass
             accountsControl1.Show();
             accountsControl1.BringToFront();
             storeAccountControl1.Hide();
+            generateControl1.Hide();
         }
 
 
@@ -31,6 +32,7 @@ namespace Multipass
             accountsControl1.Show();
             accountsControl1.BringToFront();
             storeAccountControl1.Hide();
+            generateControl1.Hide();
         }
 
         private void btnSaveAccount_Click(object sender, EventArgs e)
@@ -38,6 +40,15 @@ namespace Multipass
             accountsControl1.Hide();
             storeAccountControl1.Show();
             storeAccountControl1.BringToFront();
+            generateControl1.Hide();
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            accountsControl1.Hide();
+            storeAccountControl1.Hide();
+            generateControl1.Show();
+            generateControl1.BringToFront();
         }
     }
 }

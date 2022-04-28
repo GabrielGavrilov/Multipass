@@ -50,6 +50,7 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(178, 343);
             this.pnMenu.TabIndex = 0;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // btnGenerate
             // 
@@ -61,6 +62,8 @@
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            this.btnGenerate.MouseEnter += new System.EventHandler(this.btnGenerate_MouseEnter);
+            this.btnGenerate.MouseLeave += new System.EventHandler(this.btnGenerate_MouseLeave);
             // 
             // btnSaveAccount
             // 
@@ -72,6 +75,8 @@
             this.btnSaveAccount.Text = "Save Account";
             this.btnSaveAccount.UseVisualStyleBackColor = true;
             this.btnSaveAccount.Click += new System.EventHandler(this.btnSaveAccount_Click);
+            this.btnSaveAccount.MouseEnter += new System.EventHandler(this.btnSaveAccount_MouseEnter);
+            this.btnSaveAccount.MouseLeave += new System.EventHandler(this.btnSaveAccount_MouseLeave);
             // 
             // btnAccount
             // 
@@ -83,6 +88,8 @@
             this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnAccount.MouseEnter += new System.EventHandler(this.btnAccount_MouseEnter);
+            this.btnAccount.MouseLeave += new System.EventHandler(this.btnAccount_MouseLeave);
             // 
             // generateControl1
             // 
@@ -116,7 +123,7 @@
             this.Controls.Add(this.pnMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ParentWindow";
-            this.Text = "Multipass v1.0.0";
+            this.Text = "Multipass";
             this.Load += new System.EventHandler(this.ParentWindow_Load);
             this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);

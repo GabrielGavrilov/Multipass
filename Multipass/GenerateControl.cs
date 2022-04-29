@@ -12,6 +12,11 @@ namespace Multipass
 {
     public partial class GenerateControl : UserControl
     {
+
+        static Color tbBackColor = Color.FromArgb(25, 24, 25);
+        static Color btnBackColor = Color.FromArgb(70, 69, 70);
+        static Color labelColor = Color.FromArgb(130, 130, 130);
+        static Color borderColor = Color.FromArgb(31, 31, 31);
         public GenerateControl()
         {
             InitializeComponent();
@@ -33,6 +38,34 @@ namespace Multipass
 
             string stringPassword = new String(password);
             tbPasswordOutput.Text = stringPassword;
+
+        }
+
+        private void GenerateControl_Load(object sender, EventArgs e)
+        {
+            labelGeneratePassword.ForeColor = Color.White;
+
+            lbNumbOfChars.ForeColor = Color.White;
+            numbChars.BackColor = tbBackColor;
+            numbChars.ForeColor = Color.White;
+            numbChars.BorderStyle = BorderStyle.None;
+
+            panelBackgroundNumbChars.BackColor = borderColor;
+
+            lbPasswordOutput.ForeColor = Color.White;
+            tbPasswordOutput.BackColor = tbBackColor;
+            tbPasswordOutput.ForeColor = Color.White;
+            tbPasswordOutput.BorderStyle = BorderStyle.None;
+
+            panelBackgroundPasswordOutput.BackColor = borderColor;
+
+            btnGeneratePassword.ForeColor = Color.White;
+            btnGeneratePassword.BackColor = btnBackColor;
+            btnGeneratePassword.TabStop = false;
+            btnGeneratePassword.FlatStyle = FlatStyle.Flat;
+            btnGeneratePassword.FlatAppearance.BorderSize = 0;
+
+            panelBackgroundGenBtn.BackColor = borderColor;
 
         }
     }

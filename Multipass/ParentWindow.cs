@@ -17,6 +17,11 @@ namespace Multipass
         static Color menuColor = Color.FromArgb(43, 43, 43);
         static Color contentColor = Color.FromArgb(53, 53, 53);
         static Color labelColor = Color.FromArgb(130, 130, 130);
+        static Color onPanelColor = Color.FromArgb(51, 51, 51);
+
+        static bool isOnAccounts;
+        static bool isOnSave;
+        static bool isOnGenerate;
 
         public ParentWindow()
         {
@@ -31,35 +36,114 @@ namespace Multipass
 
         private void ParentWindow_Load(object sender, EventArgs e)
         {
-            accountsControl1.Show();
-            accountsControl1.BringToFront();
-            storeAccountControl1.Hide();
-            generateControl1.Hide();
+            showAccountsPanel();
         }
 
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            accountsControl1.Show();
-            accountsControl1.BringToFront();
-            storeAccountControl1.Hide();
-            generateControl1.Hide();
+            showAccountsPanel();
         }
 
         private void btnSaveAccount_Click(object sender, EventArgs e)
         {
-            accountsControl1.Hide();
-            storeAccountControl1.Show();
-            storeAccountControl1.BringToFront();
-            generateControl1.Hide();
+            showSaveAccountPanel();
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            showGeneratePanel(); 
+        }
+
+        /************************************************************
+        *                   MENU BUTTONS LOGIC 
+        *************************************************************/
+
+        private void showAccountsPanel()
+        {
+
+            if(isOnSave == true)
+            {
+                btnSaveAccount.ForeColor = labelColor;
+                btnSaveAccount.BackColor = menuColor;
+            }
+
+            if(isOnGenerate == true)
+            {
+                btnGenerate.ForeColor = labelColor;
+                btnGenerate.BackColor = menuColor;
+            }
+
+            isOnAccounts = true;
+            isOnSave = false;
+            isOnGenerate = false;
+
+            accountsControl1.Show();
+            accountsControl1.BringToFront();
+            storeAccountControl1.Hide();
+            generateControl1.Hide();
+
+            btnAccount.ForeColor = Color.White;
+            btnAccount.BackColor = onPanelColor;
+
+        }
+
+        private void showSaveAccountPanel()
+        {
+
+            if (isOnAccounts == true)
+            {
+                btnAccount.ForeColor = labelColor;
+                btnAccount.BackColor = menuColor;
+            }
+
+            if (isOnGenerate == true)
+            {
+                btnGenerate.ForeColor = labelColor;
+                btnGenerate.BackColor = menuColor;
+            }
+
+            isOnAccounts = false;
+            isOnSave = true;
+            isOnGenerate = false;
+
+            accountsControl1.Hide();
+            storeAccountControl1.Show();
+            storeAccountControl1.BringToFront();
+            generateControl1.Hide();
+
+            btnSaveAccount.ForeColor = Color.White;
+            btnSaveAccount.BackColor = onPanelColor;
+
+        }
+
+        private void showGeneratePanel()
+        {
+
+            if (isOnAccounts == true)
+            {
+                btnAccount.ForeColor = labelColor;
+                btnAccount.BackColor = menuColor;
+            }
+
+            if (isOnSave == true)
+            {
+                btnSaveAccount.ForeColor = labelColor;
+                btnSaveAccount.BackColor = menuColor;
+            }
+
+            isOnAccounts = false;
+            isOnSave = false;
+            isOnGenerate = true;
+
             accountsControl1.Hide();
             storeAccountControl1.Hide();
             generateControl1.Show();
             generateControl1.BringToFront();
+
+            btnGenerate.ForeColor = Color.White;
+            btnGenerate.BackColor = onPanelColor;
+
         }
 
         /************************************************************
@@ -99,6 +183,13 @@ namespace Multipass
         private void btnAccount_MouseLeave(object sender, EventArgs e)
         {
             btnAccount.ForeColor = labelColor;
+
+            if(isOnAccounts == true)
+            {
+                btnAccount.ForeColor = Color.White;
+                btnAccount.BackColor = onPanelColor;
+            }
+
         }
 
         private void btnSaveAccount_MouseEnter(object sender, EventArgs e)
@@ -112,6 +203,12 @@ namespace Multipass
         private void btnSaveAccount_MouseLeave(object sender, EventArgs e)
         {
             btnSaveAccount.ForeColor = labelColor;
+
+            if (isOnSave == true)
+            {
+                btnSaveAccount.ForeColor = Color.White;
+                btnSaveAccount.BackColor = onPanelColor;
+            }
         }
 
         private void btnGenerate_MouseEnter(object sender, EventArgs e)
@@ -125,6 +222,12 @@ namespace Multipass
         private void btnGenerate_MouseLeave(object sender, EventArgs e)
         {
             btnGenerate.ForeColor = labelColor;
+
+            if (isOnGenerate == true)
+            {
+                btnGenerate.ForeColor = Color.White;
+                btnGenerate.BackColor = onPanelColor;
+            }
         }
 
     }

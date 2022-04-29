@@ -12,6 +12,12 @@ namespace Multipass
 {
     public partial class StoreAccountControl : UserControl
     {
+
+        static Color tbBackColor = Color.FromArgb(25, 24, 25);
+        static Color btnBackColor = Color.FromArgb(70, 69, 70);
+        static Color labelColor = Color.FromArgb(130, 130, 130);
+        static Color borderColor = Color.FromArgb(31, 31, 31);
+
         public StoreAccountControl()
         {
             InitializeComponent();
@@ -49,5 +55,45 @@ namespace Multipass
 
         }
 
+        private void StoreAccountControl_Load(object sender, EventArgs e)
+        {
+            labelStoreAccount.ForeColor = Color.White;
+
+            lbEmail.ForeColor = Color.White;
+            lbUsername.ForeColor = Color.White;
+            lbPassword.ForeColor = Color.White;
+            lbEmail.ForeColor = Color.White;
+            lbWebsiteUrl.ForeColor = Color.White;
+
+            tbAccountEmail.BackColor = tbBackColor;
+            tbAccountEmail.ForeColor = Color.White;
+            tbAccountEmail.BorderStyle = BorderStyle.None;
+            tbAccountEmail.TabStop = false;
+
+            tbAccountUsername.BackColor = tbBackColor;
+            tbAccountUsername.ForeColor = Color.White;
+            tbAccountUsername.BorderStyle = BorderStyle.None;
+
+            tbAccountPassword.BackColor = tbBackColor;
+            tbAccountPassword.ForeColor = Color.White;
+            tbAccountPassword.BorderStyle = BorderStyle.None;
+
+            tbWebLink.BackColor = tbBackColor;
+            tbWebLink.ForeColor = Color.White;
+            tbWebLink.BorderStyle = BorderStyle.None;
+
+            btnSaveAccount.ForeColor = Color.White;
+            btnSaveAccount.BackColor = btnBackColor;
+            btnSaveAccount.TabStop = false;
+            btnSaveAccount.FlatStyle = FlatStyle.Flat;
+            btnSaveAccount.FlatAppearance.BorderSize = 0;
+
+            panelBackgroundEmail.BackColor = borderColor;
+            panelBackgroundUsername.BackColor = borderColor;
+            panelBackgroundPassword.BackColor = borderColor;
+            panelBackgroundWebUrl.BackColor = borderColor;
+            panelBackgroundSaveBtn.BackColor = borderColor;
+
+        }
     }
 }

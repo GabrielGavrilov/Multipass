@@ -34,7 +34,13 @@
             this.btnGeneratePassword = new System.Windows.Forms.Button();
             this.numbChars = new System.Windows.Forms.NumericUpDown();
             this.lbNumbOfChars = new System.Windows.Forms.Label();
+            this.panelBackgroundNumbChars = new System.Windows.Forms.Panel();
+            this.panelBackgroundPasswordOutput = new System.Windows.Forms.Panel();
+            this.panelBackgroundGenBtn = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numbChars)).BeginInit();
+            this.panelBackgroundNumbChars.SuspendLayout();
+            this.panelBackgroundPasswordOutput.SuspendLayout();
+            this.panelBackgroundGenBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelGeneratePassword
@@ -49,11 +55,12 @@
             // 
             // tbPasswordOutput
             // 
-            this.tbPasswordOutput.Location = new System.Drawing.Point(24, 119);
+            this.tbPasswordOutput.Location = new System.Drawing.Point(2, 2);
             this.tbPasswordOutput.Name = "tbPasswordOutput";
             this.tbPasswordOutput.Size = new System.Drawing.Size(331, 20);
             this.tbPasswordOutput.TabIndex = 5;
             this.tbPasswordOutput.Text = "output";
+            this.tbPasswordOutput.AutoSize = false;
             // 
             // lbPasswordOutput
             // 
@@ -67,7 +74,7 @@
             // btnGeneratePassword
             // 
             this.btnGeneratePassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGeneratePassword.Location = new System.Drawing.Point(221, 145);
+            this.btnGeneratePassword.Location = new System.Drawing.Point(1, 1);
             this.btnGeneratePassword.Name = "btnGeneratePassword";
             this.btnGeneratePassword.Size = new System.Drawing.Size(134, 23);
             this.btnGeneratePassword.TabIndex = 7;
@@ -77,10 +84,11 @@
             // 
             // numbChars
             // 
-            this.numbChars.Location = new System.Drawing.Point(24, 75);
+            this.numbChars.Location = new System.Drawing.Point(2, 2);
             this.numbChars.Name = "numbChars";
             this.numbChars.Size = new System.Drawing.Size(331, 20);
             this.numbChars.TabIndex = 8;
+            this.numbChars.AutoSize = false;
             // 
             // lbNumbOfChars
             // 
@@ -91,19 +99,48 @@
             this.lbNumbOfChars.TabIndex = 9;
             this.lbNumbOfChars.Text = "Number of characters";
             // 
+            // panelBackgroundNumbChars
+            // 
+            this.panelBackgroundNumbChars.Controls.Add(this.numbChars);
+            this.panelBackgroundNumbChars.Location = new System.Drawing.Point(24, 75);
+            this.panelBackgroundNumbChars.Name = "panelBackgroundNumbChars";
+            this.panelBackgroundNumbChars.Size = new System.Drawing.Size(336, 24);
+            this.panelBackgroundNumbChars.TabIndex = 14;
+            // 
+            // panelBackgroundPasswordOutput
+            // 
+            this.panelBackgroundPasswordOutput.Controls.Add(this.tbPasswordOutput);
+            this.panelBackgroundPasswordOutput.Location = new System.Drawing.Point(24, 118);
+            this.panelBackgroundPasswordOutput.Name = "panelBackgroundPasswordOutput";
+            this.panelBackgroundPasswordOutput.Size = new System.Drawing.Size(336, 24);
+            this.panelBackgroundPasswordOutput.TabIndex = 15;
+            // 
+            // panelBackgroundGenBtn
+            // 
+            this.panelBackgroundGenBtn.Controls.Add(this.btnGeneratePassword);
+            this.panelBackgroundGenBtn.Location = new System.Drawing.Point(224, 148);
+            this.panelBackgroundGenBtn.Name = "panelBackgroundGenBtn";
+            this.panelBackgroundGenBtn.Size = new System.Drawing.Size(136, 25);
+            this.panelBackgroundGenBtn.TabIndex = 16;
+            // 
             // GenerateControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelBackgroundGenBtn);
+            this.Controls.Add(this.panelBackgroundPasswordOutput);
+            this.Controls.Add(this.panelBackgroundNumbChars);
             this.Controls.Add(this.lbNumbOfChars);
-            this.Controls.Add(this.numbChars);
-            this.Controls.Add(this.btnGeneratePassword);
             this.Controls.Add(this.lbPasswordOutput);
-            this.Controls.Add(this.tbPasswordOutput);
             this.Controls.Add(this.labelGeneratePassword);
             this.Name = "GenerateControl";
             this.Size = new System.Drawing.Size(380, 340);
+            this.Load += new System.EventHandler(this.GenerateControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numbChars)).EndInit();
+            this.panelBackgroundNumbChars.ResumeLayout(false);
+            this.panelBackgroundPasswordOutput.ResumeLayout(false);
+            this.panelBackgroundPasswordOutput.PerformLayout();
+            this.panelBackgroundGenBtn.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +154,8 @@
         private System.Windows.Forms.Button btnGeneratePassword;
         private System.Windows.Forms.NumericUpDown numbChars;
         private System.Windows.Forms.Label lbNumbOfChars;
+        private System.Windows.Forms.Panel panelBackgroundNumbChars;
+        private System.Windows.Forms.Panel panelBackgroundPasswordOutput;
+        private System.Windows.Forms.Panel panelBackgroundGenBtn;
     }
 }
